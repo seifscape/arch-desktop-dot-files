@@ -5,22 +5,25 @@ Set up on 2026-10-08.
 
 ## TODO
 
-- [ ] **Install the LTS kernel** as a real safety net. If a kernel update
-      breaks boot, pick it from GRUB's "Advanced options".
-- [ ] **Finish enabling the fallback initramfs.** `'fallback'` is already in
-      `PRESETS`, but the image lines are still commented out, so every
-      kernel update warns "Skipping image 'fallback'".
+- [x] **LTS kernel installed** (2026-10-12) as a real safety net. If a kernel
+      update breaks boot, pick it from GRUB's "Advanced options".
+- [x] **Fallback initramfs enabled** for both kernels (2026-10-12), which also
+      ends the "Skipping image 'fallback'" warning on kernel updates.
 - [ ] **Make an Arch ISO USB** as a last resort (boot it, then `arch-chroot`
-      to repair).
+      to repair). Needs a spare stick; writing the image wipes it.
 
-Run the first two one at a time:
+Both were done by [`boot/install-safety-net.sh`](../boot/install-safety-net.sh) (safe to re-run).
+Two surprises it handles:
 
-```
-sudo pacman -S linux-lts
-sudo sed -i -e 's/^#fallback_image=/fallback_image=/' -e 's/^#fallback_options=/fallback_options=/' /etc/mkinitcpio.d/linux.preset
-sudo mkinitcpio -P
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-```
+- `linux.preset` listed `fallback` but had its image lines commented out, while
+  `linux-lts.preset` had the lines but left `fallback` off `PRESETS`.
+- GRUB sorts kernels by version and put `linux-lts` first, which would have
+  made LTS the default boot. `GRUB_TOP_LEVEL="/boot/vmlinuz-linux"` in
+  `/etc/default/grub` keeps the normal kernel as the top entry.
+
+Resulting menu: **Arch Linux** (normal kernel, default), **Advanced options**
+(linux and linux-lts, each with a fallback entry), **Windows Boot Manager**.
+All Arch entries show Vimix's Arch icon.
 
 Why both: the fallback initramfs is the same kernel with every driver
 included, which helps if hardware or drivers change. The LTS kernel is a
