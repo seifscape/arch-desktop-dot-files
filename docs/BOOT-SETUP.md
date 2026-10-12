@@ -9,8 +9,8 @@ Set up on 2026-10-08.
       update breaks boot, pick it from GRUB's "Advanced options".
 - [x] **Fallback initramfs enabled** for both kernels (2026-10-12), which also
       ends the "Skipping image 'fallback'" warning on kernel updates.
-- [ ] **Make an Arch ISO USB** as a last resort (boot it, then `arch-chroot`
-      to repair). Needs a spare stick; writing the image wipes it.
+- [x] **Arch ISO USB** on hand as a last resort (boot it, then `arch-chroot`
+      to repair).
 
 Both were done by [`boot/install-safety-net.sh`](../boot/install-safety-net.sh) (safe to re-run).
 Two surprises it handles:
