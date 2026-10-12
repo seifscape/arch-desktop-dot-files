@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Wallpaper Picker
+Comment=Pick a wallpaper for Plasma and Hyprland
+Exec=sh -c "\\$HOME/.config/hypr/scripts/wallpaper-picker.sh"
+Icon=preferences-desktop-wallpaper
+Terminal=false
+NoDisplay=true
+X-KDE-Shortcuts=Meta+Shift+W

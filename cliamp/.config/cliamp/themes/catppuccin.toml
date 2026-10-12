@@ -1,0 +1,8 @@
+# Catppuccin Frappé, overriding cliamp's built-in "catppuccin" so it matches the desktop exactly.
+bg = "#303446"        # base
+accent = "#ca9ee6"    # mauve: title, track, seek bar, selection
+bright_fg = "#c6d0f5" # text
+fg = "#838ba7"        # overlay1: muted text, help bar
+green = "#a6d189"     # playing, volume, spectrum low
+yellow = "#e5c890"    # warnings, spectrum middle
+red = "#e78284"       # errors, favourites, spectrum top

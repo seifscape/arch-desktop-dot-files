@@ -1,0 +1,8 @@
+# cliamp — matches the hyprwizrd desktop (Catppuccin Frappé, mauve accent)
+theme = "catppuccin"
+
+# Winamp-style bars with floating peak caps
+visualizer = "ClassicPeak"
+
+# File browser ('o') starts here
+initial_directory = "~/Music"

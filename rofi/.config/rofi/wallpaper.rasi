@@ -1,0 +1,80 @@
+/**
+ * Wallpaper picker (SUPER+W): thumbnail grid in the hyprwizrd launcher style.
+ * Used by ~/.config/hypr/scripts/wallpaper-picker.sh
+ **/
+
+@import "~/.config/rofi/colors/catppuccin.rasi"
+
+* {
+    font:             "JetBrains Mono Nerd Font 10";
+    background-color: transparent;
+    text-color:       @foreground;
+}
+
+window {
+    location:         center;
+    anchor:           center;
+    width:            1380px;
+    border:           2px solid;
+    border-radius:    8px;
+    border-color:     @selected;
+    background-color: @background;
+}
+
+mainbox {
+    spacing:  12px;
+    padding:  24px;
+    children: [ "inputbar", "listview" ];
+}
+
+inputbar {
+    spacing:          10px;
+    padding:          10px 14px;
+    border-radius:    4px;
+    background-color: @background-alt;
+    children:         [ "prompt", "entry" ];
+}
+
+prompt {
+    text-color: @foreground-alt;
+}
+
+entry {
+    placeholder:       "search...";
+    placeholder-color: #6C7086;
+    cursor:            text;
+}
+
+listview {
+    columns:      5;
+    lines:        3;
+    spacing:      12px;
+    cycle:        true;
+    fixed-height: true;
+    scrollbar:    false;
+    flow:         horizontal;
+}
+
+element {
+    orientation:   vertical;
+    spacing:       6px;
+    padding:       8px;
+    border-radius: 6px;
+    cursor:        pointer;
+}
+
+element selected.normal {
+    background-color: @foreground-alt;
+    text-color:       @background;
+}
+
+element-icon {
+    size:   220px;
+    cursor: inherit;
+}
+
+element-text {
+    horizontal-align: 0.5;
+    text-color:       inherit;
+    cursor:           inherit;
+}

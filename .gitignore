@@ -1,0 +1,3 @@
+# hyprwizrd's images have no licence, so they aren't committed.
+# fetch-assets.sh downloads them into place.
+hypr/.config/hypr/misc/*.png

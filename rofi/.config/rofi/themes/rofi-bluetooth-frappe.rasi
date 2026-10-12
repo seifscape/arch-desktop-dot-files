@@ -1,0 +1,97 @@
+configuration {
+    font: "JetBrainsMono Nerd Font 12";
+}
+
+* {
+    base:      #303446;
+    mantle:    #292c3c;
+    crust:     #232634;
+
+    text:      #c6d0f5;
+    subtext0:  #a5adce;
+
+    surface0:  #414559;
+    surface1:  #51576d;
+    surface2:  #626880;
+
+    blue:      #8caaee;
+    green:     #a6d189;
+    red:       #e78284;
+    yellow:    #e5c890;
+    mauve:     #ca9ee6;
+
+    selected-bg: #8caaee;
+    selected-fg: #232634;
+}
+
+window {
+    background-color: @base;
+    border: 2px;
+    border-radius: 5px;
+    border-color: @blue;
+    padding: 12px;
+    width: 28%;
+}
+
+mainbox {
+    background-color: @base;
+    spacing: 8px;
+}
+
+inputbar {
+    background-color: @base;
+    border-radius: 5px;
+    padding: 4px 8px;
+    spacing: 6px;
+}
+
+prompt {
+    background-color: @green;
+    text-color: @crust;
+    border-radius: 3px;
+    padding: 8px 12px;
+    vertical-align: 0.5;
+}
+
+entry {
+    background-color: transparent;
+    padding: 10px;
+    text-color: @subtext0;
+    placeholder: "Select device";
+    vertical-align: 0.5;
+}
+
+case-indicator {
+    background-color: transparent;
+    text-color: @subtext0;
+    padding: 0;
+}
+
+listview {
+    background-color: @base;
+    padding: 6px 0 0 0;
+    spacing: 3px;
+}
+
+textbox, message {
+    background-color: @base;
+    text-color: @text;
+}
+
+element {
+    background-color: @base;
+    text-color: @text;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+
+element-text, element-icon {
+    background-color: transparent;
+    text-color: inherit;
+}
+
+element selected {
+    background-color: @text;
+    text-color: @selected-fg;
+}
+

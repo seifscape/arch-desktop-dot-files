@@ -1,0 +1,12 @@
+{
+    "KPlugin": {
+        "Id": "hide-app",
+        "Name": "Hide App",
+        "Description": "Meta+H minimizes every window of the focused app, like Cmd+H on macOS",
+        "Authors": [{ "Name": "seif" }],
+        "License": "MIT",
+        "Version": "1.0"
+    },
+    "X-Plasma-API": "javascript",
+    "KPackageStructure": "KWin/Script"
+}
