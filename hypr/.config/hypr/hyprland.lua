@@ -26,7 +26,7 @@ hl.monitor({
     output   = "",
     mode     = "preferred",
     position = "auto",
-    scale    = "auto",
+    scale    = 2,   -- 200%, same as Plasma on this 27" 4K screen ("auto" picks a fractional value)
 })
 
 
@@ -50,6 +50,8 @@ local menu        = "~/.config/rofi/launchers/type-1/launcher.sh"
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function () 
+   -- Same pointer as Plasma (kcminputrc: this theme, size 24). The env vars above reach apps; this sets Hyprland's own cursor.
+   hl.exec_cmd("hyprctl setcursor catppuccin-frappe-breeze-cursors 24")
    hl.exec_cmd("systemctl --user start hyprpolkitagent")
    hl.exec_cmd(terminal)
    hl.exec_cmd("dunst")
