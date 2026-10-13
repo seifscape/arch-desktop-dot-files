@@ -52,6 +52,8 @@ local menu        = "~/.config/rofi/launchers/type-1/launcher.sh"
 hl.on("hyprland.start", function () 
    -- Same pointer as Plasma (kcminputrc: this theme, size 24). The env vars above reach apps; this sets Hyprland's own cursor.
    hl.exec_cmd("hyprctl setcursor catppuccin-frappe-breeze-cursors 24")
+   -- Secret service (keyring) for gh, git credentials and apps. Plasma starts it for you; Hyprland doesn't.
+   hl.exec_cmd("ksecretd")
    hl.exec_cmd("systemctl --user start hyprpolkitagent")
    hl.exec_cmd(terminal)
    hl.exec_cmd("dunst")
