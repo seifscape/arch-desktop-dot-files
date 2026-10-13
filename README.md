@@ -17,9 +17,7 @@
 
 ---
 
-<!-- HERO: screenshots/hyprland.png (Hyprland: Ghostty + fastfetch, cava, waybar) replaces this once taken -->
-
-![The login screen: a hanging lamp lights a cat sitting on a green line, next to a big clock](screenshots/sddm.png)
+![Hyprland: Waybar on top showing the track that's playing, Ghostty with fastfetch on the left and cava's gradient bars on the right](screenshots/hyprland.png)
 
 The desktop half of **sirius**, a Beelink SER9 MAX on a 4K screen. The look started as
 [hyprwizrd](https://github.com/hyprwizrd/hyprwizrd-dotfiles), ported to Hyprland's newer Lua
@@ -62,11 +60,20 @@ This repo is everything that only makes sense on a desktop.
 
 ## Screenshots
 
-<!-- Hyprland shots (hyprlock, rofi, power menu, wallpaper picker) are added as they're taken. -->
+| Launcher (rofi) | Power menu |
+|---|---|
+| ![rofi app launcher: a search box over a list of apps](screenshots/rofi.png) | ![Power menu: lock, sleep, log out, reboot, shut down, with the uptime](screenshots/powermenu.png) |
+
+| Wallpaper picker | Music: cliamp streaming lofi |
+|---|---|
+| ![Wallpaper picker: a grid of thumbnails from the two Catppuccin wallpaper repos](screenshots/picker.png) | ![cliamp playing an internet lofi stream, with its visualizer](screenshots/cliamp.png) |
 
 | Login (SDDM) | KDE Plasma |
 |---|---|
 | ![SDDM login screen: a hanging lamp lights a cat](screenshots/sddm.png) | ![Plasma desktop with the Flatppuccin cat wallpaper and a slim bottom panel](screenshots/plasma.png) |
+
+The hero and the first four shots are Hyprland, taken by [`screenshots/take.sh`](screenshots/take.sh),
+which also checks the session and plays a lofi stream so the bar and visualizer have something to show.
 
 ## Install
 
