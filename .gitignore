@@ -1,3 +1,9 @@
 # hyprwizrd's images have no licence, so they aren't committed.
 # fetch-assets.sh downloads them into place.
 hypr/.config/hypr/misc/*.png
+
+# cliamp writes logs, listening history and (with `cliamp setup`) service logins into
+# its config folder, which is linked into this repo. Keep only the config and theme.
+cliamp/.config/cliamp/*
+!cliamp/.config/cliamp/config.toml
+!cliamp/.config/cliamp/themes/
