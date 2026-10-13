@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=rofi -show
+Name=Rofi
+Icon=rofi
+# The package's file has no Categories line, so KDE's menu files it under "Lost & Found".
+Categories=Utility;

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=rofi-theme-selector
+Name=Rofi Theme Selector
+Icon=rofi
+# Hidden: the selector rewrites ~/.config/rofi/config.rasi, which is a link into this repo and
+# already sets our Catppuccin theme. Delete this file to get the menu entry back.
+NoDisplay=true
+Categories=Utility;
