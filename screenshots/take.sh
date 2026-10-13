@@ -44,6 +44,16 @@ say "Config"
 errs=$(hyprctl configerrors 2>&1)
 if [[ -z "$errs" || "$errs" == *"no errors"* ]]; then ok "no config errors"; else bad "config errors: $errs"; fi
 hyprctl monitors 2>/dev/null | grep -E '^Monitor|@' | sed 's/^/    /' | tee -a "$LOG"
+scale=$(hyprctl monitors -j 2>/dev/null | jq -r '.[0].scale')
+[[ "$scale" == 2 || "$scale" == 2.0 ]] && ok "scale is 200%, like Plasma" || meh "scale is ${scale:-unknown}, Plasma uses 2"
+
+say "Cursor (should be catppuccin-frappe-breeze-cursors, size 24, like Plasma)"
+henv=$(tr '\0' '\n' < "/proc/$(pgrep -x Hyprland | head -1)/environ" 2>/dev/null)
+theme=$(grep '^XCURSOR_THEME=' <<<"$henv" | cut -d= -f2); size=$(grep '^XCURSOR_SIZE=' <<<"$henv" | cut -d= -f2)
+[[ "$theme" == catppuccin-frappe-breeze-cursors && "$size" == 24 ]] && ok "Hyprland env: $theme, $size" || bad "Hyprland env: theme='${theme:-unset}' size='${size:-unset}'"
+cursor_log="${XDG_RUNTIME_DIR:-/run/user/$UID}/hypr/$HYPRLAND_INSTANCE_SIGNATURE/hyprland.log"
+say "  Hyprland's own cursor messages:"
+grep -i cursor "$cursor_log" 2>/dev/null | tail -6 | sed 's/^/    /' | tee -a "$LOG"
 
 say "Running"
 for p in waybar hyprpaper dunst hypridle; do
