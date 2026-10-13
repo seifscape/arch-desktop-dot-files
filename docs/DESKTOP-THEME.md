@@ -11,7 +11,7 @@ in `~/.config` land in the repo. The terminal setup is separate: `linux-dot-file
 Palette: Catppuccin **Frappé** (switched from Mocha on 2026-10-12: easier on the eyes), accent **Mauve**. Signature gradient: mauve → blue → teal
 (`#cba6f7` → `#89b4fa` → `#94e2d5`).
 
-Backup of the configs from before: `~/Developer/dotfiles-backup-2026-10-08/`
+The configs from before the first change (2026-10-08) weren't kept.
 
 ## TODO
 
@@ -50,8 +50,8 @@ steps: `BOOT-SETUP.md` → SDDM login screen.
 
 The Hyprland session now uses the look from
 [hyprwizrd/hyprwizrd-dotfiles](https://github.com/hyprwizrd/hyprwizrd-dotfiles), ported to the Lua
-config. Plasma, the SDDM screen and the Flatppuccin wallpaper there are unchanged. Aurora configs
-from before the switch: `~/Developer/dotfiles-backup-2026-10-12/`.
+config. Plasma, the SDDM screen and the Flatppuccin wallpaper there are unchanged. The aurora-era
+waybar, hyprlock and hyprpaper configs weren't kept; `aurora.lua` is.
 
 | File | What |
 |---|---|
@@ -65,10 +65,12 @@ from before the switch: `~/Developer/dotfiles-backup-2026-10-12/`.
 | `~/.config/dunst/dunstrc` | Notifications (mauve frame) |
 | `~/.config/cava/` | Music visualizer, Catppuccin gradient teal → blue → mauve → pink (`SUPER+A`, floating). `shaders/` incl. Winamp-style spectrum, used only with cava's SDL output |
 | `~/.config/cliamp/` | Music player (`SUPER+SHIFT+A`, floating). `config.toml`: theme catppuccin, ClassicPeak visualizer, file browser in `~/Music`. `themes/catppuccin.toml` overrides the built-in theme with exact Frappé colours. Media keys work over MPRIS; the bar shows the track (mpris module, any player) |
-| `~/.config/fastfetch/` | hyprwizrd boxed layout with an Arch logo in a mauve → lavender → blue → sapphire → teal gradient (`arch-catppuccin.txt`) |
+| `~/.config/fastfetch/` | Not in this repo: managed by chezmoi from [linux-dot-files](https://github.com/seifscape/linux-dot-files). `config.jsonc` is the Mac's boxed layout, `logo.txt` the per-machine Catppuccin Arch logo |
 
-- **Back to aurora**: in `hyprland.lua` change `require("hyprwizrd")` to `require("aurora")`, `dunst` → `mako`,
-  the menu back to `wofi --show drun`, and restore `hyprlock.conf`/`hyprpaper.conf`/`waybar/` from the backup.
+- **Back to aurora** (partly possible): in `hyprland.lua` change `require("hyprwizrd")` to `require("aurora")`,
+  `dunst` → `mako` and the menu back to `wofi --show drun`. `aurora.lua` is in this repo, and the old `mako` and
+  `wofi` configs are still in `~/.config` (not tracked here). The old waybar, hyprlock and hyprpaper configs are gone;
+  get them from [flickowoa/dotfiles, aurora branch](https://github.com/flickowoa/dotfiles/tree/aurora).
 - **Check the config after editing** (prints `config ok` or the exact errors):
   `Hyprland --verify-config -c ~/.config/hypr/hyprland.lua`
 - Keys: `SUPER+Q` terminal, `SUPER+R` launcher, `SUPER+E` files, `SUPER+C` close,
