@@ -49,7 +49,7 @@ window#waybar.hidden {
   color: #303446;
 }
 
-#mpris,
+#custom-media,
 #bluetooth,
 #memory,
 #custom-power,
@@ -66,7 +66,7 @@ window#waybar.hidden {
   color: #c6d0f5;
 }
 
-#mpris:hover,
+#custom-media:hover,
 #bluetooth:hover,
 #memory:hover,
 #custom-power:hover,
@@ -157,10 +157,10 @@ tooltip label {
 }
 
 
-#mpris {
+#custom-media {
   color: #ca9ee6;
 }
 
-#mpris.paused {
+#custom-media.paused {
   color: #838ba7;
 }

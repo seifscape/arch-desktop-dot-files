@@ -9,7 +9,7 @@
 
   "modules-left": ["custom/logo", "hyprland/workspaces"],
 
-  "modules-center": ["mpris", "clock"],
+  "modules-center": ["custom/media", "clock"],
 
   "modules-right": [
     "tray",
@@ -62,7 +62,7 @@
     "interval": 5,
     "format": "󰍛 {}%",
     "max-length": 6,
-    "on-click": "ghostty --title=btop -e btop"
+    "on-click": "ghostty --title=btop --window-width=141 --window-height=36 -e btop"
   },
 
   "tray": {
@@ -70,16 +70,16 @@
     "icon-size": 16
   },
 
-  "mpris": {
-    "format": "{status_icon} {title} · {artist}",
-    "format-stopped": "",
-    "status-icons": { "playing": "󰐊", "paused": "󰏤" },
-    "title-len": 32,
-    "artist-len": 20,
-    "tooltip-format": "{player}: {title} — {artist} ({album})",
+  // Not waybar's `mpris` module: it segfaults when a player quits. See scripts/media.sh.
+  "custom/media": {
+    "exec": "~/.config/waybar/scripts/media.sh",
+    "return-type": "json",
+    "interval": 2,
+    "format": "{}",
+    "hide-empty-text": true,
     "on-click": "playerctl play-pause",
     "on-click-right": "playerctl next",
-    "on-click-middle": "ghostty --title=cliamp -e cliamp"
+    "on-click-middle": "ghostty --title=cliamp --window-width=111 --window-height=30 -e cliamp"
   },
 
   "clock": {
@@ -98,7 +98,7 @@
     "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-disconnected": "Disconnected",
 
-    "on-click": "ghostty --title=nmtui -e nmtui",
+    "on-click": "ghostty --title=nmtui --window-width=100 --window-height=25 -e nmtui",
 
     "interval": 5,
     "nospacing": 1

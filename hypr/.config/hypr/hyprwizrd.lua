@@ -92,7 +92,9 @@ hl.window_rule({
     size   = "60% 40%",
     center = true,
 })
-hl.bind("SUPER + A", hl.dsp.exec_cmd("ghostty --title=cava -e cava"))
+-- (--window-width/height are in cells, about 9.3 x 20 px each: the Mac's shared Ghostty config asks for a
+-- 226x64 window, which would otherwise override the size rules here)
+hl.bind("SUPER + A", hl.dsp.exec_cmd("ghostty --title=cava --window-width=121 --window-height=20 -e cava"))
 
 -- Wallpaper picker (rofi thumbnail grid over ~/Pictures/Wallpapers)
 hl.bind("SUPER + W", hl.dsp.exec_cmd("~/.config/hypr/scripts/wallpaper-picker.sh"))
@@ -106,4 +108,4 @@ hl.window_rule({
     size   = "55% 60%",
     center = true,
 })
-hl.bind("SUPER + SHIFT + A", hl.dsp.exec_cmd("ghostty --title=cliamp -e cliamp"))
+hl.bind("SUPER + SHIFT + A", hl.dsp.exec_cmd("ghostty --title=cliamp --window-width=111 --window-height=30 -e cliamp"))
