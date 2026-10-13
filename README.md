@@ -70,7 +70,7 @@ This repo is everything that only makes sense on a desktop.
 
 | Login (SDDM) | KDE Plasma |
 |---|---|
-| ![SDDM login screen: a hanging lamp lights a cat](screenshots/sddm.png) | ![Plasma desktop with the Flatppuccin cat wallpaper and a slim bottom panel](screenshots/plasma.png) |
+| ![SDDM login screen: a hanging lamp lights a cat](screenshots/sddm.png) | ![Plasma desktop with the light-blue Arch logo wallpaper on near-black and a slim bottom panel](screenshots/plasma.png) |
 
 The hero and the first four shots are Hyprland, taken by [`screenshots/take.sh`](screenshots/take.sh),
 which also checks the session and plays a lofi stream so the bar and visualizer have something to show.
