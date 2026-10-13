@@ -23,12 +23,15 @@ The configs from before the first change (2026-10-08) weren't kept.
 
 ## Wallpaper
 
-Current (since 2026-10-12): hyprwizrd's one-line cat, `~/Pictures/Wallpapers/hyprwizrd-one-liner.png`
-(1920×1080, also at `~/.config/hypr/misc/one_liner.png`). Used by the Plasma desktop and hyprpaper.
-The lock screen (hyprlock) and the SDDM login screen use the lamp + cat image.
+Current (since 2026-10-12, picked with the picker): `catppuccin-wallpapers/os/arch-black-4k.png`, a
+light-blue Arch logo on near-black, 3840×2160. Plasma and Hyprland (hyprpaper) share it; the picker
+rewrites `hyprpaper.conf` and Plasma's config together. The lock screen (hyprlock) and the SDDM login
+screen keep the lamp + cat image.
 
-Previous: `~/Pictures/Wallpapers/flatppuccin_4k_macchiato.png` (3840×2160), and before that
-`aurora.jpg`. To go back: `plasma-apply-wallpaperimage <path>` and change the path in `hyprpaper.conf`.
+Earlier the same day: hyprwizrd's one-line cat (`hyprwizrd-one-liner.png`, also
+`~/.config/hypr/misc/one_liner.png`) and `flatppuccin_4k_macchiato.png`; before that `aurora.jpg`.
+To go back to any of them, pick it with the picker, or `plasma-apply-wallpaperimage <path>` and change
+the path in `hyprpaper.conf`.
 
 **Collections** (in `~/Pictures/Wallpapers/`, update with `git pull` in each, then
 `~/.config/hypr/scripts/wallpaper-picker.sh --thumbs`):
@@ -50,7 +53,7 @@ steps: `BOOT-SETUP.md` → SDDM login screen.
 
 The Hyprland session now uses the look from
 [hyprwizrd/hyprwizrd-dotfiles](https://github.com/hyprwizrd/hyprwizrd-dotfiles), ported to the Lua
-config. Plasma, the SDDM screen and the Flatppuccin wallpaper there are unchanged. The aurora-era
+config. Plasma and the SDDM screen there are unchanged. The aurora-era
 waybar, hyprlock and hyprpaper configs weren't kept; `aurora.lua` is.
 
 | File | What |
