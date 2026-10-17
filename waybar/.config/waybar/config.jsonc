@@ -12,9 +12,9 @@
   "modules-center": ["custom/media", "clock"],
 
   "modules-right": [
+    "network",
     "bluetooth",
     "memory",
-    "network",
     "wireplumber",
     "custom/power"
   ],
