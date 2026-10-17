@@ -12,7 +12,6 @@
   "modules-center": ["custom/media", "clock"],
 
   "modules-right": [
-    "tray",
     "bluetooth",
     "memory",
     "network",
@@ -45,6 +44,7 @@
   },
   
   "bluetooth": {
+    "on-click": "blueman-manager",
   	"format": "{icon}",
     "format-icons": {
       "on": "󰂯",

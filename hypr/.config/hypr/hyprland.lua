@@ -60,10 +60,8 @@ hl.on("hyprland.start", function ()
    hl.exec_cmd("hypridle")
    hl.exec_cmd("swayosd-server")   -- on-screen display for volume/brightness keys
    hl.exec_cmd("hyprsunset")   -- night tint, times in hyprsunset.conf
-   hl.exec_cmd("blueman-applet")
    hl.exec_cmd("wl-paste --type text --watch cliphist store")
    hl.exec_cmd("wl-paste --type image --watch cliphist store")
-   hl.exec_cmd("nm-applet --indicator")
    hl.exec_cmd("waybar & hyprpaper")
  end)
 
