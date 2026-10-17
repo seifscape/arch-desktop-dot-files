@@ -9,7 +9,7 @@ initial_directory = "~/Music"
 
 [ytmusic]
 enabled      = true
-cookies_from = "chormium"
+cookies_from = "chromium"
 
 [mixcloud]
 enabled = true
