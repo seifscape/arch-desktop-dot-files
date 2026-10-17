@@ -68,11 +68,15 @@ This repo is everything that only makes sense on a desktop.
 |---|---|
 | ![Wallpaper picker: a grid of thumbnails from the two Catppuccin wallpaper repos](screenshots/picker.png) | ![cliamp playing an internet lofi stream, with its visualizer](screenshots/cliamp.png) |
 
+| Notification (dunst) | Volume pop-up (SwayOSD) |
+|---|---|
+| ![A dunst notification: a mauve-bordered box in the top-right corner](screenshots/notification.png) | ![SwayOSD volume pop-up: a speaker icon, a mauve bar and 60%](screenshots/osd.png) |
+
 | Login (SDDM) | KDE Plasma |
 |---|---|
 | ![SDDM login screen: a hanging lamp lights a cat](screenshots/sddm.png) | ![Plasma desktop with the light-blue Arch logo wallpaper on near-black and a slim bottom panel](screenshots/plasma.png) |
 
-The hero and the first four shots are Hyprland, taken by [`screenshots/take.sh`](screenshots/take.sh),
+The hero and every shot except the login screen and Plasma are Hyprland, taken by [`screenshots/take.sh`](screenshots/take.sh),
 which also checks the session and plays a lofi stream so the bar and visualizer have something to show.
 
 ## Install

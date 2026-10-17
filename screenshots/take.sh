@@ -77,9 +77,6 @@ say "Running"
 for p in waybar hyprpaper dunst hypridle; do
     pgrep -x "$p" >/dev/null && ok "$p" || bad "$p is not running"
 done
-for p in nm-applet blueman-applet; do
-    pgrep -x "$p" >/dev/null && ok "$p" || meh "$p is not running (tray icon)"
-done
 pgrep -f hyprpolkitagent >/dev/null && ok "polkit agent" || meh "no polkit agent"
 hyprctl layers 2>/dev/null | grep -qi waybar && ok "bar is on screen" || bad "waybar has no layer on screen"
 active=$(hyprctl hyprpaper listactive 2>&1)
@@ -146,6 +143,16 @@ sleep 1
 menu_shot rofi      "$HOME/.config/rofi/launchers/type-1/launcher.sh"  2
 menu_shot powermenu "$HOME/.config/rofi/powermenu/type-2/powermenu.sh" 2
 menu_shot picker    "$HOME/.config/hypr/scripts/wallpaper-picker.sh"   4
+
+# A dunst notification and the SwayOSD volume pop-up, cropped (logical coordinates on the
+# 4K screen at 2x). The OSD uses a custom value so the real volume doesn't change.
+notify-send -a Hyprland "Hyprland" "Catppuccin Frappé notifications, shown by dunst"
+sleep 1.5
+grim -g "1421,38 499x154" "$OUT/notification.png" 2>>"$LOG" && ok "saved notification.png" || bad "grim failed for notification.png"
+sleep 8
+swayosd-client --custom-progress 0.6 --custom-progress-text "60%" --custom-icon audio-volume-high-symbolic
+sleep 0.8
+grim -g "672,806 576x154" "$OUT/osd.png" 2>>"$LOG" && ok "saved osd.png" || bad "grim failed for osd.png"
 
 # cliamp has been playing on workspace 9 since the checks.
 dispatch 'hl.dsp.focus({ workspace = 9 })'
