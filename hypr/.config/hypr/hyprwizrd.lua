@@ -96,6 +96,9 @@ hl.window_rule({
 -- 226x64 window, which would otherwise override the size rules here)
 hl.bind("SUPER + A", hl.dsp.exec_cmd("ghostty --title=cava --window-width=121 --window-height=20 -e cava"))
 
+-- Night tint on/off by hand (hyprsunset starts at login with the times in hyprsunset.conf)
+hl.bind("SUPER + SHIFT + N", hl.dsp.exec_cmd("sh -c 'pkill -x hyprsunset || hyprsunset'"))
+
 -- Wallpaper picker (rofi thumbnail grid over ~/Pictures/Wallpapers)
 hl.bind("SUPER + W", hl.dsp.exec_cmd("~/.config/hypr/scripts/wallpaper-picker.sh"))
 

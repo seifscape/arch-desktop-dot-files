@@ -24,6 +24,10 @@ say()  { printf '%s\n' "$*" | tee -a "$LOG"; }
 ok()   { say "  ✓ $*"; pass=$((pass+1)); }
 bad()  { say "  ✗ $*"; fail=$((fail+1)); }
 meh()  { say "  ! $*"; warn=$((warn+1)); }
+# The night tint would colour the README shots, so it's off while they're taken (and back on after).
+sunset_was_on=$(pgrep -x hyprsunset)
+[[ -n "$sunset_was_on" ]] && pkill -x hyprsunset
+trap '[[ -n "$sunset_was_on" ]] && (setsid hyprsunset >/dev/null 2>&1 &)' EXIT
 STREAM="${STREAM:-https://play.streamafrica.net/lofiradio}"   # SomaFM, laut.fm and ilovemusic also work
 home_ws=$(hyprctl activeworkspace -j 2>/dev/null | jq -r .id)
 dispatch() { hyprctl dispatch "$1" >/dev/null 2>&1; }

@@ -79,7 +79,7 @@ which also checks the session and plays a lofi stream so the bar and visualizer 
 
 ```sh
 sudo pacman -S --needed stow hyprland hyprlock hypridle hyprpaper waybar rofi dunst \
-    cava hyprshot hyprpicker pavucontrol playerctl ffmpeg librsvg
+    cava hyprshot hyprpicker hyprsunset pavucontrol playerctl ffmpeg librsvg
 yay -S --needed cliamp sddm-astronaut-theme   # from the AUR
 git clone https://github.com/seifscape/arch-desktop-dot-files ~/Developer/arch-desktop-dot-files
 ~/Developer/arch-desktop-dot-files/install.sh
@@ -113,6 +113,7 @@ shortcuts below. Re-running it is safe.
 | Visualizer · music player | Super+A · Super+Shift+A | |
 | Screenshot region · screen | Super+Print · Super+Shift+Print | |
 | Colour picker | Super+Shift+P | |
+| Night tint on/off | Super+Shift+N | |
 | Minimize (⌘M) | | Meta+M |
 | Hide app (⌘H) | | Meta+H |
 | Tiling editor | | Meta+Shift+T (Meta+T is Ghostty's new tab) |
