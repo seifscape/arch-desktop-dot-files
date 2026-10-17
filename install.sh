@@ -5,7 +5,7 @@
 set -eu
 cd "$(dirname "$0")"
 
-PACKAGES="hypr waybar rofi dunst cava cliamp kde fonts"
+PACKAGES="hypr waybar rofi dunst swayosd cava cliamp kde fonts"
 
 command -v stow >/dev/null || { echo "Install stow first: sudo pacman -S --needed stow"; exit 1; }
 
@@ -14,7 +14,7 @@ command -v stow >/dev/null || { echo "Install stow first: sudo pacman -S --neede
 # (a program that rewrites a file then writes into the repo, not over a link).
 # Shared folders like ~/.local/share/applications only lose the files we provide.
 BACKUP="$HOME/.local/state/arch-desktop-dot-files/backup-$(date +%Y%m%d-%H%M%S)"
-OWNED=".config/hypr .config/waybar .config/rofi .config/dunst .config/cava .config/cliamp
+OWNED=".config/hypr .config/waybar .config/rofi .config/dunst .config/swayosd .config/cava .config/cliamp
        .local/share/kwin/scripts/hide-app"
 stash() {   # stash <path relative to $HOME>
     if [ -e "$HOME/$1" ] && [ ! -L "$HOME/$1" ]; then

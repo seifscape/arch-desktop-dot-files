@@ -34,8 +34,8 @@ This repo is everything that only makes sense on a desktop.
 |---|---|
 | **Window manager** | [Hyprland](https://hyprland.org) 0.56 (Lua config) · [KDE Plasma](https://kde.org/plasma-desktop/) 6.7 |
 | **Bar** | [Waybar](https://github.com/Alexays/Waybar), with now playing over MPRIS |
-| **Launcher · menus** | [rofi](https://github.com/davatorium/rofi) 2.0: apps, power, Bluetooth, wallpaper grid |
-| **Notifications** | [dunst](https://dunst-project.org) |
+| **Launcher · menus** | [rofi](https://github.com/davatorium/rofi) 2.0: apps, clipboard history, window switcher, power, Bluetooth, wallpaper grid |
+| **Notifications · OSD** | [dunst](https://dunst-project.org) · [SwayOSD](https://github.com/ErikReider/SwayOSD) pops up for volume, mute and brightness keys |
 | **Terminal** | [Ghostty](https://ghostty.org) |
 | **Font** | JetBrains Mono Nerd Font |
 | **Lock · idle** | hyprlock (a lamp lighting a cat) · hypridle |
@@ -79,7 +79,7 @@ which also checks the session and plays a lofi stream so the bar and visualizer 
 
 ```sh
 sudo pacman -S --needed stow hyprland hyprlock hypridle hyprpaper waybar rofi dunst \
-    cava hyprshot hyprpicker hyprsunset pavucontrol playerctl ffmpeg librsvg
+    cava hyprshot hyprpicker hyprsunset swayosd cliphist wl-clipboard pavucontrol playerctl ffmpeg librsvg
 yay -S --needed cliamp sddm-astronaut-theme   # from the AUR
 git clone https://github.com/seifscape/arch-desktop-dot-files ~/Developer/arch-desktop-dot-files
 ~/Developer/arch-desktop-dot-files/install.sh
@@ -107,7 +107,11 @@ shortcuts below. Re-running it is safe.
 
 | | Hyprland | Plasma |
 |---|---|---|
+| App launcher | Super+R | |
+| Clipboard history · window switcher | Super+Shift+V · Super+Tab | |
 | Wallpaper picker | Super+W | Meta+Shift+W (Meta+W is Overview) |
+| Close window · float/tile | Super+C · Super+V | |
+| Move window | Super+Shift+arrows | |
 | Lock | Super+L | |
 | Power menu | Super+Esc | |
 | Visualizer · music player | Super+A · Super+Shift+A | |
@@ -128,9 +132,10 @@ The wallpaper picker sets Hyprland and Plasma at once, from either session.
 | Folder | Goes to | What |
 |---|---|---|
 | `hypr/` | `~/.config/hypr` | Hyprland (Lua config): `hyprwizrd.lua` holds the look and extra keys, plus hyprlock, hypridle, hyprpaper and `scripts/wallpaper-picker.sh`. `aurora.lua` is the previous look |
-| `waybar/` | `~/.config/waybar` | Top bar: workspaces, clock, now playing, tray, network, volume, power |
+| `waybar/` | `~/.config/waybar` | Top bar: workspaces, clock, now playing, then Wi-Fi, Bluetooth, CPU, volume, power |
 | `rofi/` | `~/.config/rofi` | Launcher, power menu, Bluetooth menu, wallpaper grid |
 | `dunst/` | `~/.config/dunst` | Notifications |
+| `swayosd/` | `~/.config/swayosd` | Volume and brightness pop-up, Frappé style |
 | `cava/` | `~/.config/cava` | Audio visualizer |
 | `cliamp/` | `~/.config/cliamp` | Terminal music player, Catppuccin theme |
 | `kde/` | `~/.local/share` | The hide-app KWin script (Meta+H) and the wallpaper-picker launcher |
