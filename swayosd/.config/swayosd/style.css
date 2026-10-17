@@ -1,9 +1,9 @@
-/* Catppuccin Mocha + mauve, matching mako/waybar */
+/* Catppuccin Frappé + mauve, matching mako/waybar */
 window#osd {
   padding: 14px 20px;
   border-radius: 15px;
-  border: 3px solid #cba6f7;
-  background: alpha(#1e1e2e, 0.87);
+  border: 3px solid #ca9ee6;
+  background: alpha(#303446, 0.87);
 }
 
 window#osd #container {
@@ -12,7 +12,7 @@ window#osd #container {
 
 window#osd image,
 window#osd label {
-  color: #cdd6f4;
+  color: #c6d0f5;
   font-family: "JetBrainsMono Nerd Font";
 }
 
@@ -32,12 +32,12 @@ window#osd trough {
   min-height: inherit;
   border-radius: inherit;
   border: none;
-  background: #45475a;
+  background: #51576d;
 }
 
 window#osd progress {
   min-height: inherit;
   border-radius: inherit;
   border: none;
-  background: #cba6f7;
+  background: #ca9ee6;
 }
