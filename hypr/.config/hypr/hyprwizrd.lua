@@ -102,6 +102,11 @@ hl.bind("SUPER + SHIFT + N", hl.dsp.exec_cmd("sh -c 'pkill -x hyprsunset || hypr
 -- Wallpaper picker (rofi thumbnail grid over ~/Pictures/Wallpapers)
 hl.bind("SUPER + W", hl.dsp.exec_cmd("~/.config/hypr/scripts/wallpaper-picker.sh"))
 
+-- Clipboard history (cliphist, stored by the wl-paste lines in hyprland.lua) and window switcher,
+-- both in the same rofi style as the SUPER+R launcher.
+hl.bind("SUPER + SHIFT + V", hl.dsp.exec_cmd("sh -c 'cliphist list | rofi -dmenu -p Clipboard -theme ~/.config/rofi/launchers/type-1/style-3.rasi | cliphist decode | wl-copy'"))
+hl.bind("SUPER + Tab",       hl.dsp.exec_cmd("rofi -show window -theme ~/.config/rofi/launchers/type-1/style-3.rasi"))
+
 -- Music player (cliamp, Catppuccin theme in ~/.config/cliamp) as a floating window.
 -- Media keys reach it over MPRIS via playerctl.
 hl.window_rule({
