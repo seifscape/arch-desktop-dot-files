@@ -6,3 +6,13 @@ visualizer = "ClassicPeak"
 
 # File browser ('o') starts here
 initial_directory = "~/Music"
+
+[ytmusic]
+enabled      = true
+cookies_from = "chormium"
+
+[mixcloud]
+enabled = true
+cookies_from = "chromium"
+max_items = 100
+stream_creators = 20
