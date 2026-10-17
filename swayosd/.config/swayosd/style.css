@@ -1,0 +1,43 @@
+/* Catppuccin Mocha + mauve, matching mako/waybar */
+window#osd {
+  padding: 14px 20px;
+  border-radius: 15px;
+  border: 3px solid #cba6f7;
+  background: alpha(#1e1e2e, 0.87);
+}
+
+window#osd #container {
+  margin: 4px;
+}
+
+window#osd image,
+window#osd label {
+  color: #cdd6f4;
+  font-family: "JetBrainsMono Nerd Font";
+}
+
+window#osd progressbar:disabled,
+window#osd image:disabled {
+  opacity: 0.5;
+}
+
+window#osd progressbar {
+  min-height: 8px;
+  border-radius: 999px;
+  background: transparent;
+  border: none;
+}
+
+window#osd trough {
+  min-height: inherit;
+  border-radius: inherit;
+  border: none;
+  background: #45475a;
+}
+
+window#osd progress {
+  min-height: inherit;
+  border-radius: inherit;
+  border: none;
+  background: #cba6f7;
+}
