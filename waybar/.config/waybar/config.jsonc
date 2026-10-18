@@ -77,8 +77,9 @@
     "interval": 2,
     "format": "{}",
     "hide-empty-text": true,
-    "on-click": "playerctl play-pause",
-    "on-click-right": "playerctl next",
+    "signal": 8,
+    "on-click": "sh -c 'playerctl play-pause; sleep 0.4; pkill -RTMIN+8 waybar'",
+    "on-click-right": "sh -c 'playerctl next; sleep 0.6; pkill -RTMIN+8 waybar'",
     "on-click-middle": "ghostty --title=cliamp --window-width=111 --window-height=30 -e cliamp"
   },
 
