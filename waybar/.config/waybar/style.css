@@ -5,7 +5,7 @@
   border-radius: 0;
   min-height: 0;
   font-family: "JetBrainsMono Nerd Font", monospace;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 window#waybar {
@@ -25,7 +25,7 @@ window#waybar.hidden {
 #workspaces button {
   all: initial;
   min-width: 0;
-  padding: 3px 9px;
+  padding: 4px 11px;
   margin: 4px 4px;
   border-radius: 3px;
   background-color: #414559;
@@ -60,7 +60,7 @@ window#waybar.hidden {
 #clock,
 #tray {
   margin: 4px 4px;
-  padding: 3px 10px;
+  padding: 4px 12px;
   background-color: #414559;
   border-radius: 3px;
   color: #c6d0f5;
@@ -82,7 +82,7 @@ window#waybar.hidden {
 #custom-logo {
   padding: 0 6px;
   margin: 4px 6px 4px 0px;
-  font-size: 18px;
+  font-size: 21px;
   border-radius: 0;
   background: transparent;
   color: #8caaee;
