@@ -148,7 +148,7 @@ menu_shot picker    "$HOME/.config/hypr/scripts/wallpaper-picker.sh"   4
 # 4K screen at 2x). The OSD uses a custom value so the real volume doesn't change.
 notify-send -a Hyprland "Hyprland" "Catppuccin Frappé notifications, shown by dunst"
 sleep 1.5
-grim -g "1421,38 499x154" "$OUT/notification.png" 2>>"$LOG" && ok "saved notification.png" || bad "grim failed for notification.png"
+grim -g "1421,52 499x112" "$OUT/notification.png" 2>>"$LOG" && ok "saved notification.png" || bad "grim failed for notification.png"
 sleep 8
 swayosd-client --custom-progress 0.6 --custom-progress-text "60%" --custom-icon audio-volume-high-symbolic
 sleep 0.8
