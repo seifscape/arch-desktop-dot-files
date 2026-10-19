@@ -116,7 +116,7 @@ hl.window_rule({
     size   = "55% 60%",
     center = true,
 })
-hl.bind("SUPER + SHIFT + A", hl.dsp.exec_cmd("ghostty --title=cliamp --window-width=111 --window-height=30 -e cliamp"))
+hl.bind("SUPER + SHIFT + A", hl.dsp.exec_cmd("ghostty --title=cliamp --window-width=111 --window-height=30 -e cliamp 'https://www.youtube.com/watch?v=or047P2NOjc&list=RDor047P2NOjc&start_radio=1'"))
 
 -- Image viewer (Gwenview, the default for images) as a floating window.
 hl.window_rule({
