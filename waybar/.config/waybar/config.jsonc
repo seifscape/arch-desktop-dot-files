@@ -10,7 +10,7 @@
   "margin-right": 8,
   "fixed-center": true,
 
-  "modules-left": ["custom/logo", "clock", "custom/media"],
+  "modules-left": ["custom/logo", "clock", "custom/updates", "custom/media"],
 
   "modules-center": ["hyprland/workspaces"],
 
@@ -120,6 +120,14 @@
     "on-click": "~/.config/rofi/launchers/type-1/launcher.sh &"
   },
 
+
+  "custom/updates": {
+    "exec": "~/.config/waybar/scripts/updates.sh",
+    "return-type": "json",
+    "interval": 1800,
+    "signal": 10,
+    "on-click": "ghostty --title=update --window-width=120 --window-height=32 -e sh -c 'yay; pkill -RTMIN+10 waybar'"
+  },
 
   "custom/notifications": {
     "exec": "~/.config/waybar/scripts/notifications.sh",

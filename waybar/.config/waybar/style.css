@@ -59,6 +59,7 @@ window#waybar.hidden {
 }
 
 #custom-media,
+#custom-updates,
 #bluetooth,
 #memory,
 #custom-power,
@@ -77,6 +78,7 @@ window#waybar.hidden {
 }
 
 #custom-media:hover,
+#custom-updates:hover,
 #bluetooth:hover,
 #memory:hover,
 #custom-power:hover,
@@ -187,4 +189,12 @@ tooltip label {
 
 #custom-notifications.paused {
   color: #626880;
+}
+
+#custom-updates {
+  color: #e78284;
+}
+
+#custom-updates.uptodate {
+  color: #a6d189;
 }
