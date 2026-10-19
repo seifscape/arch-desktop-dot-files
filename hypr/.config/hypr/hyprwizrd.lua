@@ -117,3 +117,12 @@ hl.window_rule({
     center = true,
 })
 hl.bind("SUPER + SHIFT + A", hl.dsp.exec_cmd("ghostty --title=cliamp --window-width=111 --window-height=30 -e cliamp"))
+
+-- Image viewer (Gwenview, the default for images) as a floating window.
+hl.window_rule({
+    name   = "gwenview-floating",
+    match  = { class = "^org\\.kde\\.gwenview$" },
+    float  = true,
+    size   = "1152 756",
+    center = true,
+})
