@@ -77,7 +77,7 @@
 
   "clock": {
     "tooltip-format": "{calendar}",
-    "format": "  {:%I:%M %p}",
+    "format": "  {:%H:%M}",
     "format-alt": "  {:%a, %d %b %Y}"
   },
 
@@ -134,7 +134,6 @@
     "return-type": "json",
     "interval": 2,
     "signal": 9,
-    "tooltip": false,
     "on-click": "dunstctl history-pop",
     "on-click-right": "dunstctl set-paused toggle"
   },

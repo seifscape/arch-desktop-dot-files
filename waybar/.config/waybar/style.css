@@ -184,7 +184,8 @@ tooltip label {
 }
 
 #custom-notifications {
-  color: #e5c890;
+  color: #c6d0f5;
+  padding: 0 15px 0 14px;
 }
 
 #custom-notifications.paused {
