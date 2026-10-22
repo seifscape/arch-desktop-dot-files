@@ -108,6 +108,7 @@ window#waybar.hidden {
 
 #bluetooth {
   color: #85c1dc;
+  padding: 0 15px 0 14px;
 }
 
 #bluetooth.connected {
