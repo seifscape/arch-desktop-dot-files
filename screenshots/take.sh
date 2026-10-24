@@ -74,6 +74,7 @@ cursor_msgs=$(grep -iE 'hyprcursor|xcursor' "$cursor_log" 2>/dev/null | tail -5)
 [[ -n "$cursor_msgs" ]] && { say "  Hyprland's cursor messages:"; sed 's/^/    /' <<<"$cursor_msgs" | tee -a "$LOG"; }
 
 say "Running"
+pgrep -x dunst >/dev/null || { (setsid dunst >/dev/null 2>&1 &); sleep 2; }   # notify-send hangs without it
 for p in waybar hyprpaper dunst hypridle; do
     pgrep -x "$p" >/dev/null && ok "$p" || bad "$p is not running"
 done
@@ -86,7 +87,7 @@ say "Programs the keys launch"
 for c in rofi cava cliamp grim hyprlock hyprshot hyprpicker pavucontrol playerctl fastfetch ghostty; do
     command -v "$c" >/dev/null && ok "$c" || bad "$c is missing"
 done
-notify-send -a Check "Hyprland check" "dunst is working" && ok "sent a test notification (look top-right)"
+timeout 10 notify-send -a Check "Hyprland check" "dunst is working" && ok "sent a test notification (look top-right)"
 
 say "Music: cliamp playing $STREAM (workspace 9)"
 pkill -x cliamp; sleep 1
