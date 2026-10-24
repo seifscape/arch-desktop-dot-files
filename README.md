@@ -163,6 +163,8 @@ The wallpaper picker sets Hyprland and Plasma at once, from either session.
   [opendesktop.org/p/2106821](https://www.opendesktop.org/p/2106821). Not redistributed here.
 - Wallpapers: [er2de2/catppuccin_walls](https://github.com/er2de2/catppuccin_walls) and
   [zhichaoh/catppuccin-wallpapers](https://github.com/zhichaoh/catppuccin-wallpapers).
+- Starfield behind the terminals is a Ghostty shader (`space.glsl`) from
+  [omerxx/dotfiles](https://github.com/omerxx/dotfiles). It lives in the terminal dotfiles, not here.
 - Colours: [Catppuccin](https://catppuccin.com).
 
 ---
