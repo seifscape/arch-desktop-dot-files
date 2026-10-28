@@ -61,6 +61,15 @@ hl.window_rule({
     center = true,
 })
 
+-- satty (Ctrl+Shift+Print annotator)
+hl.window_rule({
+    name   = "satty-floating",
+    match  = { class = "^com\\.gabm\\.satty$" },
+    float  = true,
+    size   = "80% 80%",
+    center = true,
+})
+
 -- Floating terminals opened from the bar and keys below
 hl.window_rule({
     name   = "lazydocker-centered",
