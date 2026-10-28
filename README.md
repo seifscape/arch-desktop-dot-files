@@ -83,7 +83,7 @@ which also checks the session and plays a lofi stream so the bar and visualizer 
 
 ```sh
 sudo pacman -S --needed stow hyprland hyprlock hypridle hyprpaper waybar rofi dunst \
-    cava hyprshot hyprpicker hyprsunset swayosd cliphist wl-clipboard pavucontrol playerctl ffmpeg librsvg
+    cava hyprshot hyprpicker hyprsunset swayosd cliphist wl-clipboard pavucontrol playerctl ffmpeg librsvg satty
 yay -S --needed cliamp sddm-astronaut-theme   # from the AUR
 git clone https://github.com/seifscape/arch-desktop-dot-files ~/Developer/arch-desktop-dot-files
 ~/Developer/arch-desktop-dot-files/install.sh
@@ -121,6 +121,11 @@ shortcuts below. Re-running it is safe.
 | Visualizer · music player | Super+A · Super+Shift+A | |
 | Screenshot region · screen | Super+Print · Super+Shift+Print | |
 | Colour picker | Super+Shift+P | |
+| Annotate a screenshot (satty) | Ctrl+Shift+Print | |
+| Drop-down terminal | Super+` | |
+| Project switcher (tmux) | Super+O | |
+| Run maintenance | Super+Shift+U | |
+| Tiling ↔ scrolling layout | Super+Shift+L | |
 | Night tint on/off | Super+Shift+N | |
 | Minimize (⌘M) | | Meta+M |
 | Hide app (⌘H) | | Meta+H |
@@ -135,7 +140,7 @@ The wallpaper picker sets Hyprland and Plasma at once, from either session.
 
 | Folder | Goes to | What |
 |---|---|---|
-| `hypr/` | `~/.config/hypr` | Hyprland (Lua config): `hyprwizrd.lua` holds the look and extra keys, plus hyprlock, hypridle, hyprpaper and `scripts/wallpaper-picker.sh`. `aurora.lua` is the previous look |
+| `hypr/` | `~/.config/hypr` | Hyprland (Lua config): `hyprwizrd.lua` holds the look and extra keys, `devtools.lua` the developer extras (window rules, layer blur, dev keys), plus hyprlock, hypridle, hyprpaper and `scripts/wallpaper-picker.sh`. `aurora.lua` is the previous look |
 | `waybar/` | `~/.config/waybar` | Top bar: workspaces, clock, now playing, then Wi-Fi, Bluetooth, CPU, volume, power |
 | `rofi/` | `~/.config/rofi` | Launcher, power menu, Bluetooth menu, wallpaper grid |
 | `dunst/` | `~/.config/dunst` | Notifications |

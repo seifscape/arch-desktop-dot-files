@@ -10,11 +10,13 @@
   "margin-right": 8,
   "fixed-center": true,
 
-  "modules-left": ["custom/logo", "clock", "custom/updates", "custom/media"],
+  "modules-left": ["custom/logo", "clock", "custom/updates", "custom/maintain", "custom/media", "custom/cava"],
 
   "modules-center": ["hyprland/workspaces"],
 
   "modules-right": [
+    "custom/docker",
+    "custom/tailscale",
     "pulseaudio",
     "network",
     "bluetooth",
@@ -25,6 +27,8 @@
 
   "hyprland/workspaces": {
     "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1",
     "format": "{id}",
     "persistent-workspaces": {
       "1": [],
@@ -129,13 +133,46 @@
     "on-click": "ghostty --title=update --window-width=120 --window-height=32 -e sh -c 'yay; pkill -RTMIN+10 waybar'"
   },
 
+  // Days since ~/scripts/maintain.sh last finished; red after a week. Hidden if it never ran here.
+  "custom/maintain": {
+    "exec": "~/.config/waybar/scripts/maintain-age.sh",
+    "return-type": "json",
+    "interval": 3600,
+    "hide-empty-text": true,
+    "on-click": "~/.config/hypr/scripts/maintain-popup.sh"
+  },
+
+  // 12-bar visualizer; waybar's own cava module isn't in Arch's build. See scripts/cava.sh.
+  "custom/cava": {
+    "exec": "~/.config/waybar/scripts/cava.sh",
+    "return-type": "json",
+    "hide-empty-text": true,
+    "format": "{}"
+  },
+
+  "custom/docker": {
+    "exec": "~/.config/waybar/scripts/docker.sh",
+    "return-type": "json",
+    "interval": 15,
+    "hide-empty-text": true,
+    "on-click": "ghostty --title=lazydocker --window-width=160 --window-height=44 -e lazydocker"
+  },
+
+  "custom/tailscale": {
+    "exec": "~/.config/waybar/scripts/tailscale.sh",
+    "return-type": "json",
+    "interval": 30,
+    "hide-empty-text": true
+  },
+
   "custom/notifications": {
     "exec": "~/.config/waybar/scripts/notifications.sh",
     "return-type": "json",
     "interval": 2,
     "signal": 9,
     "on-click": "dunstctl history-pop",
-    "on-click-right": "dunstctl set-paused toggle"
+    "on-click-right": "dunstctl history-clear; dunstctl close-all",
+    "on-click-middle": "dunstctl set-paused toggle"
   },
 
   "custom/power": {

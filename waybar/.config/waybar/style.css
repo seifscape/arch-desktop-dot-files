@@ -60,6 +60,10 @@ window#waybar.hidden {
 
 #custom-media,
 #custom-updates,
+#custom-maintain,
+#custom-cava,
+#custom-docker,
+#custom-tailscale,
 #bluetooth,
 #memory,
 #custom-power,
@@ -79,6 +83,9 @@ window#waybar.hidden {
 
 #custom-media:hover,
 #custom-updates:hover,
+#custom-maintain:hover,
+#custom-docker:hover,
+#custom-tailscale:hover,
 #bluetooth:hover,
 #memory:hover,
 #custom-power:hover,
@@ -199,4 +206,35 @@ tooltip label {
 
 #custom-updates.uptodate {
   color: #a6d189;
+}
+
+#custom-maintain.fresh {
+  color: #a6d189;
+}
+
+#custom-maintain.stale {
+  color: #e78284;
+}
+
+#custom-cava {
+  color: #ca9ee6;
+  letter-spacing: 1px;
+}
+
+#custom-docker {
+  color: #85c1dc;
+}
+
+#custom-tailscale {
+  font-size: 17px;
+  min-width: 18px;
+  padding: 0 13px;
+}
+
+#custom-tailscale.up {
+  color: #a6d189;
+}
+
+#custom-tailscale.down {
+  color: #626880;
 }

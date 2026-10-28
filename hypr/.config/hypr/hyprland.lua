@@ -396,3 +396,10 @@ hl.window_rule({
 -- Catppuccin Frappé styling, bar popups and extra keys live in hyprwizrd.lua.
 -- Previous look: require("aurora") (also switch mako/wofi back above).
 require("hyprwizrd")
+
+-- Developer extras (window rules, layer blur, dev keys). In a pcall so a typo there can't stop
+-- the rest of this file from loading.
+local ok, err = pcall(require, "devtools")
+if not ok then
+    hl.exec_cmd("notify-send -u critical 'devtools.lua failed' '" .. tostring(err):gsub("'", ""):sub(1, 200) .. "'")
+end
