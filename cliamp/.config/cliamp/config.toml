@@ -1,5 +1,5 @@
-# cliamp — matches the hyprwizrd desktop (Catppuccin Frappé, mauve accent)
-theme = "catppuccin"
+# cliamp — Catppuccin Frappé, same theme file as macos-dot-files
+theme = "catppuccin-frappe"
 
 # Winamp-style bars with floating peak caps
 visualizer = "ClassicPeak"
