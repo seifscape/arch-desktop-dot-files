@@ -18,6 +18,7 @@
 
 # Constants
 divider="---------"
+connected_mark=$'\xef\x8a\x93'   # shown before connected devices
 goback="Back"
 
 # Checks if bluetooth controller is powered on
@@ -61,6 +62,7 @@ toggle_scan() {
     bluetoothctl scan off
     show_menu
   else
+    notify-send -t 5000 "Bluetooth" "Scanning for 5 seconds..." 2>/dev/null
     bluetoothctl --timeout 5 scan on
     echo "Scanning..."
     show_menu
@@ -269,7 +271,7 @@ show_menu() {
 
     while read -r mac name; do
       if device_connected "$mac"; then
-        line=" $name"
+        line="$connected_mark $name"
       else
         line="$name"
       fi
@@ -288,7 +290,7 @@ show_menu() {
     discoverable=$(discoverable_on)
 
     # Options passed to rofi
-    options="$devices\n$divider\n$power\n$scan\n$pairable\n$discoverable\nExit"
+    options="${devices:+$devices\n}$divider\n$power\n$scan\n$pairable\n$discoverable\nExit"
   else
     power="Power: off"
     options="$power\nExit"
@@ -315,7 +317,8 @@ show_menu() {
     toggle_pairable
     ;;
   *)
-    device=$(bluetoothctl devices | grep "$chosen")
+    chosen="${chosen#"$connected_mark" }"
+    device=$(bluetoothctl devices | grep -F -- "$chosen")
     # Open a submenu if a device is selected
     if [[ $device ]]; then device_menu "$device"; fi
     ;;
