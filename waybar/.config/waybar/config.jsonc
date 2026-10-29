@@ -19,7 +19,7 @@
     "custom/docker",
     "pulseaudio",
     "network",
-    "custom/tailscale",
+    "image#tailscale",
     "bluetooth",
     "memory",
     "custom/notifications",
@@ -160,11 +160,11 @@
     "on-click": "ghostty --title=lazydocker --window-width=160 --window-height=44 -e lazydocker"
   },
 
-  "custom/tailscale": {
-    "exec": "~/.config/waybar/scripts/tailscale.sh",
-    "return-type": "json",
-    "interval": 30,
-    "hide-empty-text": true
+  // The official logo (icons/*.svg rendered to png), green while connected and dim when not.
+  "image#tailscale": {
+    "exec": "~/.config/waybar/scripts/tailscale-icon.sh",
+    "size": 17,
+    "interval": 30
   },
 
   "custom/notifications": {
