@@ -282,7 +282,7 @@ show_menu() {
       else
         devices="$devices\n$line"
       fi
-    done < <(bluetoothctl devices | awk '{print $2, $3" "$4" "$5" "$6}')
+    done < <(bluetoothctl devices | sed -n 's/^Device \([0-9A-F:]*\) \(.*\)$/\1 \2/p')
 
     # Get controller flags
     scan=$(scan_on)
@@ -318,7 +318,9 @@ show_menu() {
     ;;
   *)
     chosen="${chosen#"$connected_mark" }"
-    device=$(bluetoothctl devices | grep -F -- "$chosen")
+    # Match the whole name exactly: names can hold double spaces, and a prefix could hit two devices
+    device=$(bluetoothctl devices | sed -n 's/^Device \([0-9A-F:]*\) \(.*\)$/\1\t\2/p' |
+      awk -F'\t' -v n="$chosen" '$2 == n {print "Device " $1 " " $2; exit}')
     # Open a submenu if a device is selected
     if [[ $device ]]; then device_menu "$device"; fi
     ;;
