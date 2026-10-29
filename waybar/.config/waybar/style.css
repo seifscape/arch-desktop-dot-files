@@ -157,7 +157,10 @@ window#waybar.hidden {
 
 #network {
   color: #ca9ee6;
-  padding-right: 14px;
+  font-size: 17px;
+  min-width: 18px;
+  /* round like the bluetooth button; the wifi glyph sits right of its own centre, so lean the padding the other way */
+  padding: 2px 13px 0 7px;
 }
 
 #clock {
@@ -228,7 +231,7 @@ tooltip label {
 #custom-tailscale {
   font-size: 17px;
   min-width: 18px;
-  padding: 0 13px;
+  padding: 2px 11px 0 9px;
 }
 
 #custom-tailscale.up {

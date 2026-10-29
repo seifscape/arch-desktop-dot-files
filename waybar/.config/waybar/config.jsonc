@@ -10,11 +10,12 @@
   "margin-right": 8,
   "fixed-center": true,
 
-  "modules-left": ["custom/logo", "clock", "custom/updates", "custom/maintain", "custom/media", "custom/cava"],
+  "modules-left": ["custom/logo", "clock", "custom/updates", "custom/maintain", "custom/media"],
 
   "modules-center": ["hyprland/workspaces"],
 
   "modules-right": [
+    "custom/cava",
     "custom/docker",
     "custom/tailscale",
     "pulseaudio",
@@ -86,12 +87,12 @@
   },
 
   "network": {
-    "format-wifi": "{icon} {essid}",
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format-wifi": "{icon}",
+    "format-icons": ["󰖩"],
     "format-ethernet": "󰀂",
     "format-disconnected": "󰖪",
 
-    "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-wifi": "{essid} · {signalStrength}%\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-disconnected": "Disconnected",
 
@@ -143,6 +144,7 @@
   },
 
   // 12-bar visualizer; waybar's own cava module isn't in Arch's build. See scripts/cava.sh.
+  // On the right: beside a long now-playing title the left group has no room for it.
   "custom/cava": {
     "exec": "~/.config/waybar/scripts/cava.sh",
     "return-type": "json",
