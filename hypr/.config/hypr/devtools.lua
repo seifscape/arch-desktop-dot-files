@@ -16,25 +16,6 @@ hl.layer_rule({ name = "blur-rofi",          match = { namespace = "^rofi$" },  
 hl.layer_rule({ name = "blur-notifications", match = { namespace = "^notifications$" },  blur = true, ignore_alpha = 0.3 })
 hl.layer_rule({ name = "blur-swayosd",       match = { namespace = "^swayosd$" },        blur = true, ignore_alpha = 0.3 })
 
--------------------------
----- SMART GAPS ---------
--------------------------
--- A lone window fills the screen: no gaps, border or rounding.
-hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
-hl.workspace_rule({ workspace = "f[1]",   gaps_out = 0, gaps_in = 0 })
-hl.window_rule({
-    name  = "no-gaps-wtv1",
-    match = { float = false, workspace = "w[tv1]" },
-    border_size = 0,
-    rounding    = 0,
-})
-hl.window_rule({
-    name  = "no-gaps-f1",
-    match = { float = false, workspace = "f[1]" },
-    border_size = 0,
-    rounding    = 0,
-})
-
 ------------------------------
 ---- FLOATING UTILITIES ------
 ------------------------------
