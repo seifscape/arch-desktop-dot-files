@@ -5,7 +5,7 @@
   border-radius: 0;
   min-height: 0;
   font-family: "JetBrainsMono Nerd Font", monospace;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 window#waybar {
@@ -75,7 +75,7 @@ window#waybar.hidden {
 #custom-notifications,
 #tray {
   margin: 4px 4px;
-  padding: 0 12px;
+  padding: 0 14px;
   background-color: rgba(24, 27, 44, 0.88);
   border-radius: 999px;
   color: #c6d0f5;
@@ -115,7 +115,7 @@ window#waybar.hidden {
 
 #bluetooth {
   color: #85c1dc;
-  padding: 0 15px 0 14px;
+  padding: 0 16px 0 14px;
 }
 
 #bluetooth.connected {
@@ -160,7 +160,7 @@ window#waybar.hidden {
   font-size: 17px;
   min-width: 18px;
   /* round like the bluetooth button; the wifi glyph sits right of its own centre, so lean the padding the other way */
-  padding: 2px 13px 0 7px;
+  padding: 0 14px 0 8px;
 }
 
 #clock {
@@ -231,7 +231,7 @@ tooltip label {
 #custom-tailscale {
   font-size: 17px;
   min-width: 18px;
-  padding: 2px 11px 0 9px;
+  padding: 0 12px 0 10px;
 }
 
 #custom-tailscale.up {

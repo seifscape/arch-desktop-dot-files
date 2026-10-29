@@ -17,7 +17,7 @@ artist=$(playerctl metadata artist 2>/dev/null)
 album=$(playerctl metadata album 2>/dev/null)
 player=$(playerctl metadata --format '{{playerName}}' 2>/dev/null)
 
-text="$icon $(cut_to "$title" 32)"
+text="$icon $(cut_to "$title" 26)"
 [[ -n "$artist" ]] && text+=" · $(cut_to "$artist" 20)"
 tip="$player: $title"; [[ -n "$artist" ]] && tip+=" — $artist"; [[ -n "$album" ]] && tip+=" ($album)"
 printf '{"text":"%s","class":"%s","tooltip":"%s"}\n' "$(esc "$text")" "$class" "$(esc "$tip")"
