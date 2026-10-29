@@ -17,9 +17,9 @@
   "modules-right": [
     "custom/cava",
     "custom/docker",
-    "custom/tailscale",
     "pulseaudio",
     "network",
+    "custom/tailscale",
     "bluetooth",
     "memory",
     "custom/notifications",
